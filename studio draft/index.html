@@ -1,0 +1,3284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Studio Draft — Creative & Technical Product Agency</title>
+    <meta name="description" content="Studio Draft is a creative and technical agency that designs, develops, and markets digital products engineered as platforms for sustainable profitability.">
+    <link rel="canonical" href="https://studiodraft.space/">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="alternate icon" href="./assets/images/favicon.svg">
+
+    <!-- Open Graph / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiodraft.space/">
+    <meta property="og:title" content="Studio Draft — Creative & Technical Product Agency">
+    <meta property="og:description" content="We design, develop, and market digital products engineered as platforms for sustainable profitability.">
+    <meta property="og:image" content="https://studiodraft.space/assets/images/blueprint_fintech.jpg">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://studiodraft.space/">
+    <meta name="twitter:title" content="Studio Draft — Creative & Technical Product Agency">
+    <meta name="twitter:description" content="We design, develop, and market digital products engineered as platforms for sustainable profitability.">
+    <meta name="twitter:image" content="https://studiodraft.space/assets/images/blueprint_fintech.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM — RED / BLACK / WHITE / GOLD
+   ═══════════════════════════════════════════ */
+:root {
+    --black: #0A0A0A;
+    --black-card: #111111;
+    --black-elevated: #181818;
+    --black-border: #242424;
+    --red: #E63946;
+    --red-dark: #C62828;
+    --red-glow: rgba(230, 57, 70, 0.35);
+    --gold: #C9A84C;
+    --gold-light: #D4B85A;
+    --white: #FFFFFF;
+    --white-off: #F7F7F8;
+    --white-muted: #B4B4B8;
+    --white-dim: #686870;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+    --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+}
+
+body {
+    font-family: var(--sans);
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: clip;
+    cursor: none;
+}
+
+a, button, input, select, textarea, .btn, .tag, .badge, .uiverse-card, .direct-access-card, .case-card, .service-card, .testimonial-card, .services-nav-link {
+    cursor: none;
+}
+
+/* ── DYNAMIC RED CIRCLE CURSOR ── */
+.cursor {
+    position: fixed; top: 0; left: 0;
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 1.8px solid var(--red);
+    background: rgba(230, 57, 70, 0.06);
+    pointer-events: none; z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease;
+    display: flex; align-items: center; justify-content: center;
+    will-change: transform;
+}
+.cursor-dot {
+    position: fixed; top: 0; left: 0;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--red);
+    pointer-events: none; z-index: 100000;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+    will-change: transform;
+}
+.cursor.hover {
+    width: 50px; height: 50px;
+    background: rgba(230, 57, 70, 0.15);
+    border-color: var(--red);
+}
+.cursor.hover-link {
+    width: 46px; height: 46px;
+    background: rgba(201, 168, 76, 0.18);
+    border-color: var(--gold);
+}
+.cursor.hover-card {
+    width: 76px; height: 76px;
+    background: rgba(230, 57, 70, 0.2);
+    border-color: var(--red);
+    color: var(--white);
+    font-family: var(--mono); font-size: 0.6rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+}
+.cursor.hover-card ~ .cursor-dot { opacity: 0; }
+
+@media (max-width: 1024px) {
+    body, a, button, .btn, .case-card, .service-card { cursor: auto; }
+    .cursor, .cursor-dot { display: none !important; }
+}
+
+/* ── SCROLL PROGRESS BAR ── */
+.scroll-progress {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: linear-gradient(90deg, var(--red), var(--gold));
+    z-index: 10001; width: 0;
+    transition: width 0.05s linear;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* ── SELECTION ── */
+::selection { background: var(--red); color: var(--white); }
+
+/* ── UTILITY ── */
+.container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 768px) { .container { padding: 0 20px; } }
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ── TYPOGRAPHY ── */
+.t-display { font-family: var(--display); font-weight: 800; }
+.t-xxl { font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.03em; }
+.t-xl { font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.1; letter-spacing: -0.02em; }
+.t-lg { font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; letter-spacing: -0.015em; }
+.t-md { font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1.4; }
+.t-sm { font-size: 0.95rem; line-height: 1.5; }
+.t-xs { font-size: 0.8rem; line-height: 1.5; }
+.t-mono { font-family: var(--mono); }
+.t-upper { text-transform: uppercase; letter-spacing: 0.08em; }
+.t-red { color: var(--red); }
+.t-gold { color: var(--gold); }
+.t-muted { color: var(--white-muted); }
+.t-dim { color: var(--white-dim); }
+
+/* ── BUTTONS & HOVER EFFECTS ── */
+.btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 32px; border-radius: 10px;
+    font-family: var(--sans); font-weight: 600; font-size: 0.95rem;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease, color 0.35s ease;
+    position: relative; overflow: hidden;
+    cursor: pointer; z-index: 1;
+}
+.btn::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.25) 50%, transparent 60%);
+    transform: translateX(-100%) rotate(25deg);
+    transition: transform 0.75s ease;
+    pointer-events: none; z-index: 2;
+}
+.btn:hover::before {
+    transform: translateX(100%) rotate(25deg);
+}
+.btn::after {
+    content: ''; position: absolute;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    top: var(--ripple-y, 50%); left: var(--ripple-x, 50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0; pointer-events: none;
+}
+.btn.ripple::after {
+    animation: btnRipple 0.65s ease forwards;
+}
+@keyframes btnRipple {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
+}
+.btn-red {
+    background: var(--red); color: var(--white);
+    box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
+}
+.btn-red:hover {
+    background: #d62837;
+    box-shadow: 0 12px 35px 5px rgba(230, 57, 70, 0.5);
+    transform: translateY(-3px) scale(1.02);
+}
+.btn-outline {
+    background: transparent; color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.2);
+}
+.btn-outline:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(230, 57, 70, 0.06);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.15);
+}
+.btn-ghost {
+    background: transparent; color: var(--white); padding: 8px 0;
+    border-bottom: 1.5px solid var(--red);
+}
+.btn-ghost:hover { color: var(--red); transform: translateX(4px); }
+
+.btn .arrow {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+}
+.btn:hover .arrow { transform: translate(5px, -2px); }
+
+.arrow-svg { width: 18px; height: 18px; }
+
+/* ── TAGS & HOVER ── */
+.tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.14);
+    color: var(--white-muted);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: none;
+}
+.tag:hover {
+    border-color: var(--red); color: var(--white);
+    background: rgba(230,57,70,0.12);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(230,57,70,0.2);
+}
+
+/* ── BADGE ── */
+.badge {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 6px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.3s ease;
+}
+.badge-red {
+    background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.3); color: var(--red);
+}
+.badge-red:hover {
+    background: rgba(230,57,70,0.2); box-shadow: 0 0 15px rgba(230,57,70,0.3);
+}
+.badge-gold {
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
+}
+.badge-gold:hover {
+    background: rgba(201,168,76,0.18); box-shadow: 0 0 15px rgba(201,168,76,0.25);
+}
+.pulse-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 10px var(--red);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* ── GRID ── */
+.grid { display: grid; gap: 24px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── SECTION SPACING ── */
+.section { padding: 140px 0; }
+@media (max-width: 768px) { .section { padding: 80px 0; } }
+
+/* ── SEPARATOR ── */
+.sep { height: 1px; background: var(--black-border); width: 100%; }
+.sep-red { height: 2px; background: linear-gradient(90deg, var(--red), transparent); width: 80px; }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Word-by-word reveal */
+.word-reveal .word {
+    display: inline-block; overflow: hidden; vertical-align: bottom;
+    padding-bottom: 0.08em; /* prevent descender clipping */
+    margin-bottom: -0.08em;
+}
+.word-reveal .word span {
+    display: inline-block; transform: translateY(120%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+.word-reveal.visible .word span { transform: translateY(0); }
+
+/* Scramble text */
+.scramble-text {
+    font-family: var(--mono);
+    position: relative;
+}
+
+/* Image hover zoom */
+.img-hover {
+    overflow: hidden; border-radius: 12px;
+}
+.img-hover img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-hover:hover img { transform: scale(1.05); }
+
+/* Line draw animation */
+.line-draw {
+    width: 0; height: 1px; background: var(--red);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line-draw.visible { width: 100%; }
+
+/* Counter animation */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* Marquee */
+.marquee-track {
+    display: flex; gap: 60px; animation: marquee 30s linear infinite;
+    white-space: nowrap;
+}
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Stagger children */
+.stagger-children > * {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+
+/* Glow effect on cards */
+.card-glow {
+    position: relative;
+    border: 1px solid var(--black-border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.card-glow::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(230,57,70,0.12), rgba(201,168,76,0.04) 40%, transparent 70%);
+    z-index: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s ease;
+}
+.card-glow:hover::before { opacity: 1; }
+.card-glow:hover {
+    border-color: rgba(230,57,70,0.4);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 25px rgba(230,57,70,0.15);
+}
+.card-glow > * { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════════
+   INITIAL LANDING PRELOADER & SQUARISH REVEAL
+   ═══════════════════════════════════════════ */
+/* ── RESPONSIVE PRELOADER FOR ALL DEVICES ── */
+.preloader {
+    position: fixed; inset: 0; z-index: 100000;
+    background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+    will-change: transform;
+}
+.preloader.loaded {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+.preloader-text-window {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader-word {
+    position: absolute;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
+    color: var(--white);
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.preloader-word.final-word {
+    font-size: clamp(3rem, 7.5vw, 5.5rem);
+}
+
+/* 4-second total sequence with staggered delays */
+.preloader-word:nth-child(1) { animation: flashWord 4s 0s forwards; }
+.preloader-word:nth-child(2) { animation: flashWord 4s 0.8s forwards; }
+.preloader-word:nth-child(3) { animation: flashWord 4s 1.6s forwards; }
+.preloader-word:nth-child(4) { animation: showFinalWord 4s 2.4s forwards; }
+
+@keyframes flashWord {
+    0% { opacity: 0; transform: translateY(30px); }
+    5% { opacity: 1; transform: translateY(0); }
+    15% { opacity: 1; transform: translateY(0); }
+    20% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 0; transform: translateY(-30px); }
+}
+@keyframes showFinalWord {
+    0% { opacity: 0; transform: translateY(30px); }
+    5% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SQUARISH SECTION REVEAL ANIMATION ── */
+.square-reveal {
+    position: relative;
+    clip-path: inset(10% 10% 10% 10% round 24px);
+    opacity: 0;
+    transform: scale(0.95) translateY(40px);
+    transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: clip-path, transform, opacity;
+}
+.square-reveal.visible {
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+}
+
+/* ═══════════════════════════════════════════
+   DYNAMIC ISLAND HEADER
+   ═══════════════════════════════════════════ */
+.header {
+    position: fixed; top: 20px; left: 50%;
+    transform: translateX(-50%); z-index: 1000;
+    width: 100%; max-width: 1080px; padding: 0 24px;
+    pointer-events: none;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), top 0.45s ease;
+}
+.header.nav-hidden { transform: translate(-50%, -140%); }
+.header.nav-visible { transform: translate(-50%, 0); }
+
+.header-inner {
+    background: rgba(14, 14, 16, 0.82);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    padding: 10px 24px 10px 18px;
+    display: flex; align-items: center; justify-content: space-between; gap: 32px;
+    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.8), 0 0 20px rgba(230, 57, 70, 0.15), inset 0 1px 0 rgba(255,255,255,0.12);
+    pointer-events: auto;
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+.header-inner:hover {
+    border-color: rgba(230, 57, 70, 0.4);
+    box-shadow: 0 25px 60px -10px rgba(0,0,0,0.9), 0 0 30px rgba(230, 57, 70, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    transform: translateY(-2px) scale(1.008);
+}
+.header.scrolled .header-inner {
+    padding: 8px 20px 8px 16px;
+    background: rgba(10, 10, 12, 0.92);
+    border-color: rgba(230, 57, 70, 0.3);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.9), 0 0 25px rgba(230,57,70,0.2);
+}
+
+.logo {
+    font-family: var(--display); font-weight: 800; font-size: 1.25rem;
+    display: flex; align-items: center; gap: 10px;
+    letter-spacing: -0.02em;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.logo:hover { transform: scale(1.04); }
+.logo-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--black-card); border: 1.2px solid var(--red);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.logo:hover .logo-icon {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(201,168,76,0.3);
+}
+.logo-icon::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(230,57,70,0.2), transparent);
+}
+.logo .accent { color: var(--red); }
+
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav a {
+    font-size: 0.88rem; font-weight: 500; color: var(--white-muted);
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    position: relative; padding: 6px 14px; border-radius: 100px;
+}
+.nav a::after { display: none; }
+.nav a:hover {
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-1px);
+}
+
+.header .btn-red {
+    padding: 10px 22px; border-radius: 100px;
+    font-size: 0.88rem;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none; width: 26px; height: 18px;
+    flex-direction: column; justify-content: space-between;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block; width: 100%; height: 2px; background: var(--white);
+    transition: all 0.3s ease; transform-origin: center; border-radius: 2px;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 900px) {
+    .header { top: 14px; padding: 0 16px; }
+    .nav { display: none; }
+    .header .btn-red { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* Mobile menu */
+.mobile-menu {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;
+    background: var(--black); padding: 100px 40px 40px;
+    display: flex; flex-direction: column; gap: 24px;
+    transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+    font-size: 2rem; font-weight: 700; color: var(--white);
+    font-family: var(--display);
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 140px 0 100px; position: relative; overflow: hidden;
+}
+.hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        linear-gradient(rgba(230,57,70,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,57,70,0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+.hero::after {
+    content: ''; position: absolute; top: -30%; right: -20%;
+    width: 800px; height: 800px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-heading { max-width: 900px; margin-bottom: 24px; }
+.hero-sub { max-width: 600px; color: var(--white-muted); margin-bottom: 40px; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+
+/* ── Floating parallax shapes ── */
+.hero-float {
+    position: absolute; pointer-events: none; z-index: 1;
+    opacity: 0.07; transition: transform 0.1s linear;
+}
+.hero-float-1 {
+    top: 18%; right: 8%; width: 120px; height: 120px;
+    border: 2px solid var(--red); border-radius: 50%;
+    animation: floatSlow 8s ease-in-out infinite;
+}
+.hero-float-2 {
+    bottom: 25%; right: 20%; width: 60px; height: 60px;
+    background: var(--gold); border-radius: 4px;
+    transform: rotate(45deg);
+    animation: floatSlow 10s ease-in-out infinite reverse;
+}
+.hero-float-3 {
+    top: 40%; right: 35%; width: 8px; height: 8px;
+    background: var(--red); border-radius: 50%;
+    animation: floatSlow 6s ease-in-out infinite;
+}
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+.hero-image { border-radius: 16px; overflow: hidden; position: relative; }
+.hero-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.hero-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(230,57,70,0.1), transparent 60%);
+    pointer-events: none;
+}
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card {
+    background: var(--black-card); border: 1px solid var(--black-border);
+    border-radius: 12px; padding: 24px; text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.stat-card:hover { border-color: rgba(230,57,70,0.3); transform: translateY(-2px); }
+.stat-value { font-size: 2.2rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+
+@media (max-width: 640px) {
+    .header { top: 10px; padding: 0 12px; }
+    .header-inner { padding: 8px 16px 8px 14px; gap: 12px; }
+    .logo { font-size: 1.05rem; gap: 8px; }
+    .logo-icon { width: 28px; height: 28px; }
+    .stats-grid { gap: 10px; }
+    .stat-card { padding: 16px 10px; min-width: 0; box-sizing: border-box; }
+    .stat-value { font-size: 1.75rem; margin-bottom: 4px; }
+    .stat-card .t-xs { font-size: 0.72rem; line-height: 1.3; }
+    .hero-buttons { gap: 10px; margin-bottom: 40px; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+}
+
+/* ═══════════════════════════════════════════
+   MARQUEE SECTION
+   ═══════════════════════════════════════════ */
+.marquee-section {
+    padding: 32px 0; border-top: 1px solid var(--black-border);
+    border-bottom: 1px solid var(--black-border);
+    overflow: hidden; background: var(--black);
+    position: relative;
+}
+/* Gradient fade edges */
+.marquee-section::before, .marquee-section::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 120px;
+    z-index: 2; pointer-events: none;
+}
+.marquee-section::before {
+    left: 0; background: linear-gradient(90deg, var(--black), transparent);
+}
+.marquee-section::after {
+    right: 0; background: linear-gradient(270deg, var(--black), transparent);
+}
+.marquee-section:hover .marquee-track {
+    animation-play-state: paused;
+}
+.marquee-item {
+    font-family: var(--display); font-size: 1.3rem; font-weight: 700;
+    color: var(--white-dim); white-space: nowrap;
+    display: flex; align-items: center; gap: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.marquee-item .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.marquee-item:hover { color: var(--white); transform: scale(1.05); }
+.marquee-item:hover .dot {
+    transform: scale(1.5);
+    box-shadow: 0 0 12px var(--red);
+}
+
+/* ═══════════════════════════════════════════
+   NARRATIVE / ABOUT
+   ═══════════════════════════════════════════ */
+.bg-white { background: var(--white); color: var(--black); }
+
+.concept-card {
+    border-radius: 16px; padding: 48px; position: relative;
+    min-height: 360px; display: flex; flex-direction: column;
+}
+@media (max-width: 768px) { .concept-card { padding: 28px; min-height: auto; } }
+.concept-dark {
+    background: var(--black-card); color: var(--white);
+    border: 1px solid var(--red);
+}
+.concept-light {
+    background: var(--white-off); color: var(--black);
+    border: 1px solid #E0E0E0;
+}
+.concept-label {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 16px;
+}
+.concept-title {
+    font-family: var(--display); font-size: 3rem; font-weight: 800;
+    margin-bottom: 12px;
+}
+.concept-sub { font-size: 1.15rem; font-weight: 500; margin-bottom: 24px; }
+.concept-desc { font-size: 0.95rem; line-height: 1.7; color: var(--white-dim); margin-top: auto; }
+.concept-light .concept-desc { color: #666; }
+
+/* ═══════════════════════════════════════════
+   PROBLEMS / STICKY LINKED CARDS
+   ═══════════════════════════════════════════ */
+.sticky-cards { position: relative; padding-bottom: 120px; }
+.sticky-card {
+    position: sticky;
+    background: #0E0E10; color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px; padding: 44px 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 -15px 35px rgba(0,0,0,0.8), 0 25px 60px rgba(0,0,0,0.95), inset 0 1px 0 rgba(255,255,255,0.06);
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    will-change: transform, opacity, filter;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+}
+.sticky-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--red) 0%, rgba(230,57,70,0.3) 60%, transparent 100%);
+    opacity: 0.9;
+}
+.sticky-card:hover {
+    border-color: rgba(230,57,70,0.35);
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.85), 0 30px 70px rgba(0,0,0,0.98), 0 0 30px rgba(230,57,70,0.12);
+}
+.sticky-card:nth-child(1) { top: 120px; z-index: 1; }
+.sticky-card:nth-child(2) { top: 140px; z-index: 2; }
+.sticky-card:nth-child(3) { top: 160px; z-index: 3; }
+.sticky-card:nth-child(4) { top: 180px; z-index: 4; }
+
+@media (max-width: 900px) {
+    .sticky-card { grid-template-columns: 1fr; padding: 32px 28px; gap: 24px; }
+    .sticky-card:nth-child(1) { top: 80px; }
+    .sticky-card:nth-child(2) { top: 95px; }
+    .sticky-card:nth-child(3) { top: 110px; }
+    .sticky-card:nth-child(4) { top: 125px; }
+}
+
+.sticky-card-badge {
+    font-family: var(--mono); font-size: 0.68rem; color: var(--red);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.sticky-card-badge-left { display: flex; align-items: center; gap: 8px; }
+.sticky-card-index { font-family: var(--mono); font-size: 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 0.08em; opacity: 0.9; }
+
+.sticky-card-question {
+    font-size: clamp(1.25rem, 2.1vw, 1.65rem); font-weight: 700; line-height: 1.3; color: var(--white);
+    font-family: var(--display); letter-spacing: -0.02em;
+}
+.sticky-card-tags {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px;
+}
+.sticky-card-tags .tag {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white-muted);
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-family: var(--mono);
+}
+.sticky-card-actions {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 24px;
+}
+.sticky-card-link {
+    font-family: var(--mono); font-size: 0.78rem; color: var(--white-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+.sticky-card-link:hover { color: var(--gold); transform: translateX(4px); }
+
+/* ═══════════════════════════════════════════
+   SERVICES — TABBED
+   ═══════════════════════════════════════════ */
+.services-section {
+    background: var(--black); color: var(--white);
+    border-radius: 40px;
+    position: relative; overflow: hidden;
+}
+.services-section::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+        linear-gradient(rgba(230,57,70,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,57,70,0.015) 1px, transparent 1px);
+    background-size: 50px 50px; pointer-events: none;
+}
+.services-layout { display: grid; grid-template-columns: 260px 1fr; gap: 60px; position: relative; z-index: 2; }
+.services-nav { position: sticky; top: 120px; align-self: start; }
+.services-nav-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.services-nav-link {
+    display: block; padding: 14px 20px; border-radius: 10px;
+    font-size: 1.1rem; font-weight: 600; color: var(--white-dim);
+    cursor: pointer; transition: all 0.3s ease;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.services-nav-link:hover { color: var(--white); background: var(--black-elevated); }
+.services-nav-link.active {
+    color: var(--white); background: var(--black-elevated);
+    border-color: var(--red);
+}
+
+@media (max-width: 1024px) {
+    .services-section { border-radius: 28px; }
+    .services-layout { grid-template-columns: 1fr; gap: 24px; }
+    .services-nav { position: relative; top: 0; width: 100%; margin-bottom: 8px; }
+    .services-nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 6px;
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .services-nav-list::-webkit-scrollbar { display: none; }
+    .services-nav-list li { flex: 1; min-width: max-content; }
+    .services-nav-link {
+        padding: 10px 14px;
+        font-size: 0.92rem;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .services-nav .btn-red { margin-top: 16px !important; }
+}
+
+@media (max-width: 768px) {
+    .service-card { padding: 24px 20px; }
+}
+
+.services-panel {
+    display: none; opacity: 0;
+}
+.services-panel.active {
+    display: block; opacity: 1;
+}
+
+/* ── Staggered card entrance ── */
+.services-panel.active .service-card {
+    opacity: 0; transform: translateY(30px);
+    animation: cardStagger 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.services-panel.active .service-card:nth-child(1) { animation-delay: 0.05s; }
+.services-panel.active .service-card:nth-child(2) { animation-delay: 0.12s; }
+.services-panel.active .service-card:nth-child(3) { animation-delay: 0.19s; }
+.services-panel.active .service-card:nth-child(4) { animation-delay: 0.26s; }
+
+@keyframes cardStagger {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.services-panel-title {
+    margin-bottom: 32px; opacity: 0;
+    animation: panelTitleIn 0.5s ease 0s forwards;
+}
+.services-panel.active .services-panel-title {
+    animation: panelTitleIn 0.5s ease 0s forwards;
+}
+@keyframes panelTitleIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Service card ── */
+.service-card {
+    background: var(--black-elevated); border: 1px solid var(--black-border);
+    border-radius: 16px; padding: 32px; position: relative;
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: hidden; min-height: 250px;
+}
+.service-card::before {
+    content: ''; position: absolute; inset: 0; border-radius: 16px;
+    background: radial-gradient(ellipse at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(230,57,70,0.06), transparent 60%);
+    opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+}
+.service-card:hover::before { opacity: 1; }
+.service-card:hover {
+    border-color: rgba(230,57,70,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(230,57,70,0.08);
+}
+
+/* ═══════════════════════════════════════════
+   DUAL-TEXT HOVER REVEAL SYSTEM
+   ═══════════════════════════════════════════ */
+.dual-text-container {
+    position: relative;
+    min-height: 110px;
+    margin-top: 8px;
+}
+
+.text-state-1, .text-state-2 {
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+    will-change: transform, opacity;
+}
+
+/* Text 1: Visible before hover */
+.text-state-1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-hint {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.service-card:hover .hover-hint {
+    color: var(--gold);
+}
+
+/* Text 2: Hidden before hover, revealed on hover */
+.text-state-2 {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    pointer-events: none;
+}
+
+.reveal-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--white);
+    font-family: var(--sans);
+    padding: 0;
+}
+
+.reveal-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+.reveal-checklist li::before {
+    content: '✓';
+    color: var(--red);
+    font-family: var(--mono);
+    font-weight: 700;
+}
+
+/* Hover trigger state transitions */
+.service-card:hover .text-state-1,
+.concept-card:hover .text-state-1,
+.benefit-card:hover .text-state-1,
+.dual-text-card:hover .text-state-1 {
+    opacity: 0;
+    transform: translateY(-24px);
+}
+
+.service-card:hover .text-state-2,
+.concept-card:hover .text-state-2,
+.benefit-card:hover .text-state-2,
+.dual-text-card:hover .text-state-2 {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ── Card number ── */
+.service-num {
+    font-family: var(--mono); font-size: 0.75rem; color: var(--white-dim);
+    margin-bottom: 16px; position: relative; z-index: 1;
+}
+
+/* ── Card content ── */
+.service-card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
+.service-card-desc { font-size: 0.9rem; color: var(--white-muted); line-height: 1.6; position: relative; z-index: 1; }
+
+/* ── Hover arrow circle ── */
+.service-card-arrow {
+    position: absolute; bottom: 24px; right: 24px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--red); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transform: scale(0.6) rotate(-45deg);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2;
+}
+.service-card:hover .service-card-arrow {
+    opacity: 1; transform: scale(1) rotate(0deg);
+}
+.service-card-arrow svg { width: 18px; height: 18px; }
+
+/* ── Image preview inside card ── */
+.service-card-img {
+    width: 100%; border-radius: 10px; margin-top: 16px;
+    overflow: hidden; position: relative; z-index: 1;
+}
+.service-card-img img {
+    width: 100%; height: auto; display: block; border-radius: 10px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-card:hover .service-card-img img {
+    transform: scale(1.04);
+}
+.service-card-img::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 40%; background: linear-gradient(transparent, var(--black-elevated));
+    pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   CASES
+   ═══════════════════════════════════════════ */
+.case-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+    padding: 60px 0; border-bottom: 1px solid #E0E0E0;
+}
+@media (max-width: 900px) { .case-card { grid-template-columns: 1fr; padding: 40px 0; } }
+.case-card:last-child { border-bottom: none; }
+.case-meta-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 12px; }
+.case-title { font-size: 1.6rem; font-weight: 700; line-height: 1.25; margin-bottom: 16px; color: var(--black); }
+.case-details { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+@media (max-width: 768px) { .case-details { grid-template-columns: 1fr; } }
+.case-detail-label { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 8px; }
+.case-detail-value { font-size: 0.95rem; color: #333; padding-top: 12px; border-top: 1px solid #E0E0E0; }
+
+/* ═══════════════════════════════════════════
+   3D STACKED DRAG CAROUSEL WITH UIVERSE BOXES
+   ═══════════════════════════════════════════ */
+.team-stacked-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 10px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+}
+
+.team-drag-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .team-drag-stage { height: 420px; }
+}
+@media (max-width: 640px) {
+    .team-drag-stage { height: 350px; }
+}
+
+.team-drag-surface {
+    position: absolute;
+    inset: 0;
+    z-index: 99;
+    cursor: grab;
+    touch-action: pan-y;
+}
+.team-drag-surface:active {
+    cursor: grabbing;
+}
+
+.team-card-3d {
+    position: absolute;
+    width: 275px;
+    height: 410px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+    pointer-events: auto;
+    will-change: transform, opacity;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .team-card-3d { width: 230px; height: 350px; }
+}
+@media (max-width: 640px) {
+    .team-card-3d { width: 185px; height: 280px; }
+}
+
+.team-card-img-link {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.team-card-3d img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    filter: grayscale(15%);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.team-card-3d:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+}
+
+.team-card-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.team-card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.35) 55%, transparent 100%);
+    pointer-events: none;
+}
+
+.team-badge-pill {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    color: #0A0A0A;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 20;
+}
+
+.team-info-box {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+    color: #FFFFFF;
+    z-index: 20;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+.team-name-3d {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+    .team-name-3d { font-size: 1rem; }
+}
+
+.team-role-3d {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.team-desc-3d {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+    .team-desc-3d { display: none; }
+}
+
+/* Uiverse Sliding Boxes inside 3D Card */
+.team-card-3d .icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    transition: all 0.4s ease;
+}
+
+.team-card-3d .icon .svg {
+    fill: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.team-card-3d .box {
+    position: absolute;
+    transform-origin: bottom left;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 30;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0% 25% 45% 0% / 0% 25% 75% 0%;
+    box-shadow: rgba(0, 0, 0, 0.5) -7px 7px 29px 0px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+}
+
+.team-card-3d .box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.team-card-3d .box:hover .svg {
+    fill: white;
+    transform: scale(1.15);
+}
+
+.team-card-3d .box1 {
+    width: 78%;
+    height: 78%;
+    bottom: -78%;
+    left: -78%;
+}
+.team-card-3d .box1 .icon {
+    top: 18px;
+    right: 18px;
+    width: 22px;
+    height: 22px;
+}
+.team-card-3d .box1::before {
+    background: radial-gradient(circle at 30% 107%, #FF4D5A 0%, #E63946 50%, #B81D2A 100%);
+}
+.team-card-3d .box1:hover::before { opacity: 1; }
+.team-card-3d .box1:hover .icon .svg { filter: drop-shadow(0 0 6px white); }
+
+.team-card-3d .box2 {
+    width: 58%;
+    height: 58%;
+    bottom: -58%;
+    left: -58%;
+    transition-delay: 0.12s;
+}
+.team-card-3d .box2 .icon {
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+}
+.team-card-3d .box2::before {
+    background: radial-gradient(circle at 30% 107%, #D4AF37 0%, #C9A84C 50%, #8A6D24 100%);
+}
+.team-card-3d .box2:hover::before { opacity: 1; }
+.team-card-3d .box2:hover .icon .svg { filter: drop-shadow(0 0 6px white); }
+
+.team-card-3d .box3 {
+    width: 38%;
+    height: 38%;
+    bottom: -38%;
+    left: -38%;
+    transition-delay: 0.24s;
+}
+.team-card-3d .box3 .icon {
+    top: 14px;
+    right: 14px;
+    width: 18px;
+    height: 18px;
+}
+.team-card-3d .box3::before {
+    background: radial-gradient(circle at 30% 107%, #3A3A3A 0%, #1F1F1F 90%);
+}
+.team-card-3d .box3:hover::before { opacity: 1; }
+.team-card-3d .box3:hover .icon .svg { filter: drop-shadow(0 0 6px white); }
+
+.team-card-3d .box4 {
+    width: 20%;
+    height: 20%;
+    bottom: -20%;
+    left: -20%;
+    transition-delay: 0.36s;
+}
+.team-card-3d .box4 .icon {
+    top: 10px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+}
+
+.team-card-3d:hover .box {
+    bottom: -1px;
+    left: -1px;
+}
+
+/* Navigation Dots */
+.team-nav-dots {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    z-index: 100;
+}
+.team-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.team-dot.active {
+    width: 32px;
+    border-radius: 12px;
+    background: var(--red);
+    border-color: var(--red);
+    box-shadow: 0 0 12px rgba(230, 57, 70, 0.5);
+}
+
+
+
+
+
+/* ═══════════════════════════════════════════
+   WHY US / BENEFITS
+   ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   WHY US — BESPOKE MINIMALIST CARDS (FOCUS BLUR REVEAL)
+   ═══════════════════════════════════════════ */
+.minimal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+@media (max-width: 860px) {
+    .minimal-grid { grid-template-columns: 1fr; }
+}
+
+.minimal-card {
+    background: #000000;
+    border: 1px solid #1C1C1E;
+    border-radius: 20px;
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background 0.4s ease, opacity 0.45s ease, filter 0.45s ease, box-shadow 0.45s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.minimal-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: #333336;
+    background: #050505;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.95);
+    z-index: 5;
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.minimal-grid:hover > .minimal-card:not(:hover) {
+    filter: blur(8px);
+    transform: scale(0.96);
+    opacity: 0.35;
+}
+
+.minimal-card-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+}
+.minimal-index {
+    font-family: var(--mono); font-size: 0.82rem; font-weight: 700;
+    color: var(--red); letter-spacing: 0.05em;
+}
+.minimal-tag {
+    font-family: var(--mono); font-size: 0.68rem; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+    padding: 4px 12px; border-radius: 100px;
+}
+
+.minimal-title {
+    font-family: var(--display); font-size: 1.4rem; font-weight: 700;
+    color: var(--white); margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.015em;
+}
+.minimal-desc {
+    font-family: var(--sans); font-size: 0.92rem; line-height: 1.7;
+    color: var(--white-muted); margin-bottom: 28px; flex-grow: 1;
+}
+
+.minimal-highlight {
+    font-family: var(--mono); font-size: 0.75rem; color: var(--gold);
+    padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; gap: 8px; margin-top: auto;
+}
+.minimal-highlight::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red); display: inline-block; box-shadow: 0 0 8px var(--red);
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════ */
+.testimonial-card {
+    background: var(--white-off); border-radius: 16px; padding: 32px;
+    border: 1px solid #E8E8E8; display: flex; flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-style: preserve-3d;
+}
+.testimonial-card:hover {
+    transform: translateY(-6px) rotateX(2deg);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    border-color: rgba(230,57,70,0.2);
+}
+.testimonial-author { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.testimonial-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1rem; color: var(--white);
+    flex-shrink: 0;
+}
+.testimonial-name { font-weight: 600; font-size: 0.95rem; color: var(--black); }
+.testimonial-role { font-size: 0.8rem; color: #888; }
+.testimonial-text { font-size: 1rem; line-height: 1.7; color: #444; flex: 1; }
+.testimonial-stars { display: flex; gap: 3px; margin-top: 16px; }
+.star { color: var(--gold); font-size: 1rem; }
+
+/* ═══════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════ */
+.contact-section {
+    background: var(--black); border-radius: 40px 40px 0 0;
+    position: relative; overflow: hidden;
+}
+.contact-section::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+        linear-gradient(rgba(230,57,70,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,57,70,0.015) 1px, transparent 1px);
+    background-size: 50px 50px; pointer-events: none;
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; position: relative; z-index: 2; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .form-row-2 { grid-template-columns: 1fr; gap: 16px; } }
+
+.form-group { margin-bottom: 20px; }
+.form-label {
+    display: block; font-family: var(--mono); font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--white-muted); margin-bottom: 8px;
+}
+.form-input, .form-select, .form-textarea {
+    width: 100%; padding: 14px 16px; border-radius: 10px;
+    background: var(--black-card); color: var(--white);
+    border: 1px solid var(--black-border);
+    font-family: var(--sans); font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--red); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--white-dim); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-select { appearance: none; cursor: pointer; }
+
+/* ═══════════════════════════════════════════
+   UIVERSE QUARTER CIRCLE SOCIAL CARD - MINIMALIST
+   ═══════════════════════════════════════════ */
+.social-quad-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 380px;
+    padding: 36px 24px;
+    background: var(--black-card);
+    border: 1px solid var(--black-border);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+.social-quad-wrapper::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(230,57,70,0.06), transparent 70%);
+    pointer-events: none;
+}
+
+.social-quad-main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.social-quad-up,
+.social-quad-down {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.social-quad-card {
+    width: 95px;
+    height: 95px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.social-quad-card.card1 {
+    border-radius: 95px 10px 10px 10px;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.social-quad-card.card2 {
+    border-radius: 10px 95px 10px 10px;
+    padding-top: 8px;
+    padding-right: 8px;
+}
+
+.social-quad-card.card3 {
+    border-radius: 10px 10px 10px 95px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+
+.social-quad-card.card4 {
+    border-radius: 10px 10px 95px 10px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+}
+
+.social-quad-card svg {
+    transition: fill 0.35s ease, transform 0.35s ease;
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+.social-quad-card:hover {
+    transform: scale(1.05);
+}
+
+.social-quad-card.card1:hover {
+    background: rgba(225, 48, 108, 0.12);
+    border-color: rgba(225, 48, 108, 0.5);
+    box-shadow: 0 0 25px rgba(225, 48, 108, 0.25);
+}
+.social-quad-card.card1:hover svg { fill: #e1306c; transform: scale(1.1); }
+
+.social-quad-card.card2:hover {
+    background: rgba(0, 119, 181, 0.12);
+    border-color: rgba(0, 119, 181, 0.5);
+    box-shadow: 0 0 25px rgba(0, 119, 181, 0.25);
+}
+.social-quad-card.card2:hover svg { fill: #0077b5; transform: scale(1.1); }
+
+.social-quad-card.card3:hover {
+    background: rgba(234, 67, 53, 0.12);
+    border-color: rgba(234, 67, 53, 0.5);
+    box-shadow: 0 0 25px rgba(234, 67, 53, 0.25);
+}
+.social-quad-card.card3:hover svg { fill: #ea4335; transform: scale(1.1); }
+
+.social-quad-card.card4:hover {
+    background: rgba(37, 211, 102, 0.12);
+    border-color: rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.25);
+}
+.social-quad-card.card4:hover svg { fill: #25d366; transform: scale(1.1); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer-bottom {
+    padding: 32px 0; border-top: 1px solid var(--black-border);
+    background: var(--black);
+}
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.85rem; color: var(--white-muted); transition: color 0.3s; }
+.footer-links a:hover { color: var(--red); }
+.footer-copy { font-family: var(--mono); font-size: 0.7rem; color: var(--white-dim); }
+
+/* ═══════════════════════════════════════════
+   FORM SUCCESS
+   ═══════════════════════════════════════════ */
+.form-success {
+    display: none; padding: 16px; border-radius: 10px;
+    background: rgba(230,57,70,0.08); border: 1px solid rgba(230,57,70,0.3);
+    color: var(--red); text-align: center; font-family: var(--mono); font-size: 0.85rem;
+}
+.form-success.show { display: block; }
+    </style>
+</head>
+<body>
+
+<!-- ═══ INITIAL LANDING PRELOADER ═══ -->
+<div id="preloader" class="preloader">
+    <div class="preloader-text-window">
+        <div class="preloader-word">design?</div>
+        <div class="preloader-word">develop?</div>
+        <div class="preloader-word">deploy?</div>
+        <div class="preloader-word final-word">That's<br>StudioDraft</div>
+    </div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ═══ HEADER (DYNAMIC ISLAND) ═══ -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="#top" class="logo" aria-label="Studio Draft">
+            <div class="logo-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 4.5H15M3 9H15M3 13.5H10" stroke="#E63946" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="13.5" r="1.5" fill="#C9A84C"/></svg>
+            </div>
+            STUDIO<span class="accent">/DRAFT</span>
+        </a>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="plans.html">Plans</a>
+            <a href="#cases">Blueprints</a>
+            <a href="#team">Team</a>
+        </nav>
+        <a class="btn btn-red" href="#contact">
+            <span>Get in touch</span>
+            <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <div class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="plans.html" class="mobile-link">Plans</a>
+    <a href="#cases" class="mobile-link">Blueprints</a>
+    <a href="#team" class="mobile-link">Team</a>
+    <a href="#contact" class="btn btn-red" style="margin-top: auto; justify-content: center;">Get in touch</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero square-reveal" id="top">
+    <div class="container hero-content">
+        <div class="hero-badges reveal">
+            <span class="badge badge-red"><span class="pulse-dot"></span> CREATIVE & TECHNICAL AGENCY</span>
+            <span class="badge badge-gold">SYS_STATUS: OPERATIONAL</span>
+        </div>
+
+        <div class="hero-heading word-reveal t-display t-xxl" data-scramble-heading>
+            We design, develop, and market digital products built to make money.
+        </div>
+
+        <p class="hero-sub reveal t-md">No startup fluff. No buzzwords. A hardworking team of engineering and design specialists who get straight to the blueprint.</p>
+
+        <div class="hero-buttons reveal">
+            <a class="btn btn-red" href="#contact">
+                <span>Start your blueprint</span>
+                <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="btn btn-outline" href="#cases">
+                <span>View our work</span>
+                <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+        </div>
+
+        <div class="hero-grid">
+            <div class="hero-image reveal">
+                <img src="./assets/images/blueprint_fintech.jpg" alt="Studio Draft Blueprint Architecture">
+            </div>
+            <div class="reveal reveal-delay-2" style="display:flex; flex-direction:column; justify-content:center;">
+                <p class="t-md" style="color: var(--white-muted); margin-bottom: 40px;">A unified group that ships high-converting digital platforms — from UI wireframes to production code to revenue-driving marketing funnels.</p>
+                <p class="t-mono t-upper t-xs t-dim" style="margin-bottom: 20px;">STUDIO DRAFT — IN NUMBERS</p>
+                <div class="stats-grid stagger-children">
+                    <div class="stat-card">
+                        <div class="stat-value t-display counter" data-target="100">0</div>
+                        <div class="t-xs t-muted">% in-house design & engineering</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value t-display t-red counter" data-target="4">0</div>
+                        <div class="t-xs t-muted">core discipline leads on your project</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value t-display counter" data-target="0">0</div>
+                        <div class="t-xs t-muted">proxy managers or pitch decks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value t-display t-gold">3x</div>
+                        <div class="t-xs t-muted">faster with parallel design + dev</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-section">
+    <div class="marquee-track" id="marquee">
+        <span class="marquee-item"><span class="dot"></span> UI/UX Architecture</span>
+        <span class="marquee-item"><span class="dot"></span> Full-Stack Engineering</span>
+        <span class="marquee-item"><span class="dot"></span> Growth & Marketing</span>
+        <span class="marquee-item"><span class="dot"></span> Product Strategy</span>
+        <span class="marquee-item"><span class="dot"></span> SaaS Platforms</span>
+        <span class="marquee-item"><span class="dot"></span> Mobile Applications</span>
+        <span class="marquee-item"><span class="dot"></span> System Architecture</span>
+        <span class="marquee-item"><span class="dot"></span> Revenue Optimization</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item"><span class="dot"></span> UI/UX Architecture</span>
+        <span class="marquee-item"><span class="dot"></span> Full-Stack Engineering</span>
+        <span class="marquee-item"><span class="dot"></span> Growth & Marketing</span>
+        <span class="marquee-item"><span class="dot"></span> Product Strategy</span>
+        <span class="marquee-item"><span class="dot"></span> SaaS Platforms</span>
+        <span class="marquee-item"><span class="dot"></span> Mobile Applications</span>
+        <span class="marquee-item"><span class="dot"></span> System Architecture</span>
+        <span class="marquee-item"><span class="dot"></span> Revenue Optimization</span>
+    </div>
+</div>
+
+<!-- ═══ ABOUT / NARRATIVE ═══ -->
+<section id="about" class="section bg-white square-reveal">
+    <div class="container">
+        <div class="reveal">
+            <p class="t-mono t-upper t-xs" style="color: var(--red); margin-bottom: 16px;">The Mechanics Behind the Name</p>
+            <div class="sep-red" style="margin-bottom: 24px;"></div>
+        </div>
+        <h2 class="t-display t-xl reveal" style="color: var(--black); margin-bottom: 60px;">Why "Studio Draft"?</h2>
+
+        <div class="grid grid-2" style="gap: 24px;">
+            <div class="concept-card concept-light reveal">
+                <div class="concept-label">CONCEPT 01 — STRUCTURAL ANCHOR</div>
+                <div class="concept-title" style="color: var(--black);">STUDIO</div>
+                <div class="concept-sub" style="color: var(--black);">Our fortress of focused work.</div>
+                <div class="dual-text-container">
+                    <div class="text-state-1">
+                        <div class="concept-desc" style="color: #666;">Represents our physical and operational anchor — a dedicated, collaborative workspace where skilled experts do deep, focused work.</div>
+                        <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal execution protocol →</div>
+                    </div>
+                    <div class="text-state-2">
+                        <ul class="reveal-checklist" style="color: var(--black);">
+                            <li style="color: #333;">Zero middle-management proxy friction</li>
+                            <li style="color: #333;">Strict practitioner-only sprint squads</li>
+                            <li style="color: #333;">Direct founder-to-builder Slack channels</li>
+                            <li style="color: #333;">100% in-house design & code ownership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="concept-card concept-dark reveal reveal-delay-1">
+                <div class="concept-label">CONCEPT 02 — ACTION & ITERATION</div>
+                <div class="concept-title">DRAFT</div>
+                <div class="concept-sub" style="color: var(--white-muted);">The daily act of building.</div>
+                <div class="dual-text-container">
+                    <div class="text-state-1">
+                        <div class="concept-desc" style="color: var(--white-dim);">Encapsulates our daily core execution: sketching precision UI designs, writing raw production code, and drafting data-backed marketing strategies.</div>
+                        <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal execution protocol →</div>
+                    </div>
+                    <div class="text-state-2">
+                        <ul class="reveal-checklist">
+                            <li>Continuous deployment & weekly releases</li>
+                            <li>Parallel design + engineering workflow</li>
+                            <li>Data-backed revenue funnel iterations</li>
+                            <li>Zero fluff — straight to working blueprints</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PROBLEMS WE SOLVE — STICKY LINKED CARDS ═══ -->
+<section id="problems" class="section square-reveal" style="background: var(--black); position: relative; border-top: 1px solid var(--black-border);">
+    <div class="container">
+        <div class="reveal">
+            <p class="t-mono t-upper t-xs scramble-text" style="color: var(--red); margin-bottom: 16px;" data-scramble="Your Dedicated Product Partner">Your Dedicated Product Partner</p>
+            <div class="sep-red" style="margin-bottom: 24px;"></div>
+        </div>
+        <h2 class="t-display t-xl reveal" style="color: var(--white); margin-bottom: 60px;">Building products is hard.<br><span style="color: var(--red);">Finding the right partner shouldn't be.</span></h2>
+
+        <div class="sticky-cards">
+            <!-- Card 01 -->
+            <div class="sticky-card reveal">
+                <div>
+                    <div class="sticky-card-badge">
+                        <div class="sticky-card-badge-left"><span class="pulse-dot"></span> CHALLENGE 01 // CAPACITY BOTTLE-NECK</div>
+                        <div class="sticky-card-index">01 / 04</div>
+                    </div>
+                    <div class="sticky-card-question">Need to hit aggressive launch deadlines, but hiring in-house takes 3+ months?</div>
+                    <div class="sticky-card-tags">
+                        <span class="tag">Staff Augmentation</span>
+                        <span class="tag">Embedded Senior Squads</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="dual-text-container">
+                        <div class="text-state-1">
+                            <p style="color: var(--white-muted); font-size: 0.95rem; line-height: 1.7;">Hiring in-house takes months of job postings, resume filtering, and onboarding. We embed a dedicated senior designer or developer directly into your Slack and codebase in under 48 hours.</p>
+                            <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal execution protocol →</div>
+                        </div>
+                        <div class="text-state-2">
+                            <ul class="reveal-checklist">
+                                <li>Embedded senior practitioner in &lt;48 hours</li>
+                                <li>Direct Slack, GitHub, and Figma integration</li>
+                                <li>Zero recruitment fees or long-term lock-in</li>
+                                <li>3.2x Sprint velocity boost guarantee</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sticky-card-actions">
+                        <a class="btn btn-red" href="#services" onclick="if(window.switchServiceTab) switchServiceTab('extend');">
+                            <span>Extend My Team</span>
+                            <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </a>
+                        <a class="sticky-card-link" href="#cases">View Team Blueprint No. 0842 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="sticky-card reveal">
+                <div>
+                    <div class="sticky-card-badge">
+                        <div class="sticky-card-badge-left"><span class="pulse-dot"></span> CHALLENGE 02 // SCALE & UX DEBT</div>
+                        <div class="sticky-card-index">02 / 04</div>
+                    </div>
+                    <div class="sticky-card-question">Your product is scaling fast, but legacy UX debt is causing high user dropoff?</div>
+                    <div class="sticky-card-tags">
+                        <span class="tag">Product Redesign</span>
+                        <span class="tag">Design Systems</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="dual-text-container">
+                        <div class="text-state-1">
+                            <p style="color: var(--white-muted); font-size: 0.95rem; line-height: 1.7;">Scaling starts with system consistency. We audit usability bottlenecks, build production design systems, and optimize core user journeys so rapid growth never breaks conversions.</p>
+                            <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal UX audit protocol →</div>
+                        </div>
+                        <div class="text-state-2">
+                            <ul class="reveal-checklist">
+                                <li>Full Heuristic & Heatmap Usability Audit</li>
+                                <li>Unified Figma Token & Component System</li>
+                                <li>WCAG 2.1 AA Accessibility Guarantee</li>
+                                <li>+45% Conversion Lift Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sticky-card-actions">
+                        <a class="btn btn-red" href="#services" onclick="if(window.switchServiceTab) switchServiceTab('evolve');">
+                            <span>Redesign My Product</span>
+                            <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </a>
+                        <a class="sticky-card-link" href="#services" onclick="if(window.switchServiceTab) switchServiceTab('evolve');">Explore UX Audit Specs →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="sticky-card reveal">
+                <div>
+                    <div class="sticky-card-badge">
+                        <div class="sticky-card-badge-left"><span class="pulse-dot"></span> CHALLENGE 03 // SPEED TO MARKET</div>
+                        <div class="sticky-card-index">03 / 04</div>
+                    </div>
+                    <div class="sticky-card-question">Have a critical market window but need to launch a production-ready MVP in weeks?</div>
+                    <div class="sticky-card-tags">
+                        <span class="tag">Rapid MVP</span>
+                        <span class="tag">Full-Stack Sprint</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="dual-text-container">
+                        <div class="text-state-1">
+                            <p style="color: var(--white-muted); font-size: 0.95rem; line-height: 1.7;">Discovery sharpens your scope to what drives revenue, and our pre-built full-stack architecture frameworks cut MVP development timelines by 50%. You launch faster without technical debt.</p>
+                            <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal MVP stack protocol →</div>
+                        </div>
+                        <div class="text-state-2">
+                            <ul class="reveal-checklist">
+                                <li>Next.js 14 / Node.js / PostgreSQL Core</li>
+                                <li>Pre-configured Auth0 & Stripe Payment Gateway</li>
+                                <li>Automated CI/CD Pipeline & Vercel/AWS Cloud</li>
+                                <li>14 to 30 Day Guaranteed Delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sticky-card-actions">
+                        <a class="btn btn-red" href="#services" onclick="if(window.switchServiceTab) switchServiceTab('launch');">
+                            <span>Launch My MVP</span>
+                            <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </a>
+                        <a class="sticky-card-link" href="#cases">View SaaS Blueprint No. 0048 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 04 -->
+            <div class="sticky-card reveal">
+                <div>
+                    <div class="sticky-card-badge">
+                        <div class="sticky-card-badge-left"><span class="pulse-dot"></span> CHALLENGE 04 // REVENUE & REBRANDING</div>
+                        <div class="sticky-card-index">04 / 04</div>
+                    </div>
+                    <div class="sticky-card-question">Your product is superior, but your brand & website fail to reflect your market authority?</div>
+                    <div class="sticky-card-tags">
+                        <span class="tag">Brand Identity</span>
+                        <span class="tag">Webflow & React</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="dual-text-container">
+                        <div class="text-state-1">
+                            <p style="color: var(--white-muted); font-size: 0.95rem; line-height: 1.7;">A weak brand narrative and laggy marketing site destroy customer acquisition economics. We execute full-spectrum rebrands and high-converting web platforms engineered as revenue engines.</p>
+                            <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal rebrand strategy →</div>
+                        </div>
+                        <div class="text-state-2">
+                            <ul class="reveal-checklist">
+                                <li>Vector Logo & Typography Token Suite</li>
+                                <li>Lighthouse 95+ Performance Guarantee</li>
+                                <li>Conversion-Driven Funnel Architecture</li>
+                                <li>Custom CMS & Marketing Lead Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sticky-card-actions">
+                        <a class="btn btn-red" href="#services" onclick="if(window.switchServiceTab) switchServiceTab('rebrand');">
+                            <span>Rebrand My Business</span>
+                            <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </a>
+                        <a class="sticky-card-link" href="#contact">Schedule Strategy Call →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SERVICES — TABBED ═══ -->
+<section id="services" class="section services-section square-reveal">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="reveal">
+            <p class="t-mono t-upper t-xs scramble-text" style="color: var(--red); margin-bottom: 16px;" data-scramble="End-to-End Product Execution">End-to-End Product Execution</p>
+        </div>
+        <h2 class="t-display t-xl reveal" style="margin-bottom: 20px;">From first wireframe to full-scale platform.</h2>
+        <p class="t-md reveal" style="color: var(--white-muted); max-width: 700px; margin-bottom: 60px;">We cut out external handoffs. Our team handles every phase of digital product creation under one roof — design, code, and go-to-market execution running in parallel.</p>
+
+        <div class="services-layout">
+            <div class="services-nav reveal">
+                <ul class="services-nav-list">
+                    <li><button class="services-nav-link active" data-tab="launch">Launch</button></li>
+                    <li><button class="services-nav-link" data-tab="evolve">Evolve</button></li>
+                    <li><button class="services-nav-link" data-tab="rebrand">Rebrand</button></li>
+                    <li><button class="services-nav-link" data-tab="extend">Extend</button></li>
+                </ul>
+                <a class="btn btn-red" href="plans.html" style="margin-top: 32px; width: 100%; justify-content: center;">
+                    <span>Explore All</span>
+                    <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a>
+            </div>
+
+            <div class="services-content">
+                <!-- LAUNCH -->
+                <div class="services-panel active" data-panel="launch">
+                    <h3 class="t-display t-lg services-panel-title">Launch your product & win early traction</h3>
+                    <div class="grid grid-2" style="gap: 16px;">
+                        <div class="service-card">
+                            <div class="service-num">01</div>
+                            <div class="service-card-title">Design Prototype</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Test product ideas fast with clickable user journeys and visual flows.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal deliverables →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Clickable Figma Prototype</li>
+                                        <li>Interactive User Flow Map</li>
+                                        <li>Component Design Token System</li>
+                                        <li>14-Day Rapid Turnaround</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">02</div>
+                            <div class="service-card-title">Product Discovery</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Map out key features, user flows, and architecture to align your team and reduce risks.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal deliverables →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Product Requirements Doc (PRD)</li>
+                                        <li>System & Data Architecture Blueprint</li>
+                                        <li>Scope Sharpener & Milestone Roadmap</li>
+                                        <li>Technical Feasibility Assessment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">03</div>
+                            <div class="service-card-title">Rapid MVP Development</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Get your MVP 50% faster with lean sprints and pre-built frameworks.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal tech stack →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>React / Next.js Production Core</li>
+                                        <li>Node.js / PostgreSQL Backend</li>
+                                        <li>Auth0 / Stripe Infrastructure</li>
+                                        <li>Vercel / AWS Cloud Deployment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">04</div>
+                            <div class="service-card-title">Custom MVP Development</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Expand your prototype into a fully functional, production-ready product.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal features →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Custom REST / GraphQL APIs</li>
+                                        <li>Scalable Microservices Architecture</li>
+                                        <li>Automated CI/CD Test Pipeline</li>
+                                        <li>Zero Tech-Debt Code Base</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- EVOLVE -->
+                <div class="services-panel" data-panel="evolve">
+                    <h3 class="t-display t-lg services-panel-title">Your product outgrew its first version</h3>
+                    <div class="grid grid-2" style="gap: 16px;">
+                        <div class="service-card">
+                            <div class="service-num">01</div>
+                            <div class="service-card-title">UX Audit</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Identify usability bottlenecks, improve engagement, and optimize for conversions.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal audit specs →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Full Heatmap & Dropoff Analysis</li>
+                                        <li>Heuristic Usability Scoring Report</li>
+                                        <li>Frictionless Checkout Optimization</li>
+                                        <li>Actionable UX Fix Matrix</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">02</div>
+                            <div class="service-card-title">Product Redesign</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Upgrade legacy interfaces with scalable, business-driven UX and UI.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal upgrades →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Unified Figma Design System</li>
+                                        <li>Dark/Light Mode Contrast Themes</li>
+                                        <li>WCAG 2.1 AA Accessibility Guarantee</li>
+                                        <li>Interactive Component Library</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">03</div>
+                            <div class="service-card-title">Web Development</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Custom web solutions, from complex platforms to interactive dashboards and scalable SaaS.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal stack →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Next.js 14 SSR Architecture</li>
+                                        <li>TypeScript Strict Typing</li>
+                                        <li>Sub-100ms API Response Latency</li>
+                                        <li>Full Automated Test Suite</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">04</div>
+                            <div class="service-card-title">Mobile App Development</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">End-to-end development of mobile applications for iOS and Android.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal platform specs →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>React Native Cross-Platform Core</li>
+                                        <li>Native iOS / Android Performance</li>
+                                        <li>Offline Sync & Push Notifications</li>
+                                        <li>App Store & Play Store Publishing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- REBRAND -->
+                <div class="services-panel" data-panel="rebrand">
+                    <h3 class="t-display t-lg services-panel-title">Your brand fell behind your business</h3>
+                    <div class="grid grid-2" style="gap: 16px;">
+                        <div class="service-card">
+                            <div class="service-num">01</div>
+                            <div class="service-card-title">Branding & Identity</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Develop a brand that resonates — visually, emotionally, and strategically.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal assets →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Vector Logo & Symbol Suite</li>
+                                        <li>Typography & Palette Token System</li>
+                                        <li>Brand Guidelines Book (PDF & Web)</li>
+                                        <li>Social & Marketing Asset Templates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">02</div>
+                            <div class="service-card-title">Website Design</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Custom website layouts and UX/UI strategies to improve engagement and conversions.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal features →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>High-Impact Landing Page Wireframes</li>
+                                        <li>Interactive 3D / Motion Prototype</li>
+                                        <li>Custom Typography & Grid Math</li>
+                                        <li>Conversion-Driven Funnel Layout</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">03</div>
+                            <div class="service-card-title">Website Redesign</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Modernize your web presence to drive engagement and brand authority.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal metrics →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>+45% Conversion Lift Guarantee</li>
+                                        <li>Core Web Vitals 95+ Performance</li>
+                                        <li>SEO Migration Safety Plan</li>
+                                        <li>Custom CMS Editor Setup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">04</div>
+                            <div class="service-card-title">Website Development</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">Launch a fast, scalable site that converts and supports product growth.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal tech →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Webflow / Custom React Frontend</li>
+                                        <li>Headless CMS (Sanity / Strapi)</li>
+                                        <li>Global CDN Edge Caching</li>
+                                        <li>Lighthouse 100 Speed Score</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- EXTEND -->
+                <div class="services-panel" data-panel="extend">
+                    <h3 class="t-display t-lg services-panel-title">Senior hands, without the hiring cycle</h3>
+                    <div class="grid grid-2" style="gap: 16px;">
+                        <div class="service-card">
+                            <div class="service-num">01</div>
+                            <div class="service-card-title">Embedded Designer</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">A senior designer integrated into your daily workflows and sprint rituals.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal protocol →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Direct Slack / Figma Integration</li>
+                                        <li>Daily Async Video Updates</li>
+                                        <li>Full Design System Management</li>
+                                        <li>Zero Recruitment Overhead</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">02</div>
+                            <div class="service-card-title">Embedded Developer</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">A senior full-stack engineer working inside your codebase and CI/CD pipeline.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal protocol →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Direct GitHub / GitLab Access</li>
+                                        <li>Sprint Standups & PR Reviews</li>
+                                        <li>Clean Code & High Test Coverage</li>
+                                        <li>Same Timezone Availability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">03</div>
+                            <div class="service-card-title">Product Squad</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">A complete cross-functional team: designer + 2 devs + PM operating as your own unit.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal squad setup →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>1 Senior Product Lead / PM</li>
+                                        <li>1 Senior UI/UX Designer</li>
+                                        <li>2 Full-Stack Engineers</li>
+                                        <li>Guaranteed Weekly Shipped Sprints</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-num">04</div>
+                            <div class="service-card-title">Growth Strategist</div>
+                            <div class="dual-text-container">
+                                <div class="text-state-1">
+                                    <div class="service-card-desc">An embedded marketing lead drafting funnels, running experiments, and driving CAC down.</div>
+                                    <div class="hover-hint"><span class="pulse-dot"></span> Hover to reveal strategy →</div>
+                                </div>
+                                <div class="text-state-2">
+                                    <ul class="reveal-checklist">
+                                        <li>Funnel Conversion Optimization</li>
+                                        <li>A/B Testing & Data Analytics</li>
+                                        <li>Ad Creative & Copy Sprints</li>
+                                        <li>LTV & Retention System Setup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-card-arrow"><svg viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M13 5H6M13 5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CASE STUDIES ═══ -->
+<section id="cases" class="section bg-white square-reveal">
+    <div class="container">
+        <div class="reveal">
+            <p class="t-mono t-upper t-xs scramble-text" style="color: var(--red); margin-bottom: 16px;" data-scramble="Products Engineered for Revenue">Products Engineered for Revenue</p>
+        </div>
+        <h2 class="t-display t-xl reveal" style="color: var(--black); margin-bottom: 20px;">Our featured blueprints</h2>
+
+        <!-- Case 1 -->
+        <div class="case-card reveal">
+            <div class="img-hover">
+                <img src="./assets/images/blueprint_saas.jpg" alt="Enterprise SaaS Dashboard" style="aspect-ratio: 4/3; object-fit: cover; border-radius: 12px;">
+            </div>
+            <div>
+                <div class="case-meta-label">#UI Architecture &nbsp; #Full-Stack Engineering</div>
+                <div class="case-title">System Performance & Analytics Platform</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                    <span class="tag" style="color: #555; border-color: #ddd;">Enterprise SaaS</span>
+                    <span class="tag" style="color: #555; border-color: #ddd;">Blueprint No. 0842</span>
+                </div>
+                <div class="case-details">
+                    <div><div class="case-detail-label">Tech Stack</div><div class="case-detail-value">React, Node.js, TimescaleDB, AWS, Docker</div></div>
+                    <div><div class="case-detail-label">Impact</div><div class="case-detail-value">3.2x development velocity & +40% user retention</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card reveal">
+            <div class="img-hover">
+                <img src="./assets/images/blueprint_fintech.jpg" alt="Fintech Settlement Engine" style="aspect-ratio: 4/3; object-fit: cover; border-radius: 12px;">
+            </div>
+            <div>
+                <div class="case-meta-label">#Systems Architecture &nbsp; #Payment Engine</div>
+                <div class="case-title">High-Throughput Financial Settlement Engine</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                    <span class="tag" style="color: #555; border-color: #ddd;">Fintech & Payments</span>
+                    <span class="tag" style="color: #555; border-color: #ddd;">Blueprint No. 0048A</span>
+                </div>
+                <div class="case-details">
+                    <div><div class="case-detail-label">Tech Stack</div><div class="case-detail-value">Python, Go, PostgreSQL, Redis, Kubernetes</div></div>
+                    <div><div class="case-detail-label">Impact</div><div class="case-detail-value">12.5M transactions/day @ 0.12ms latency</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section id="team" class="section square-reveal" style="background: var(--white-off);">
+    <div class="container">
+        <!-- Original Team Section Header -->
+        <div class="reveal" style="margin-bottom: 48px;">
+            <p class="t-mono t-upper t-xs" style="color: var(--red); margin-bottom: 16px;">The Execution Squad</p>
+            <div class="sep-red" style="margin-bottom: 24px;"></div>
+            <h2 class="t-display t-xl" style="color: var(--black); margin-bottom: 16px;">Direct access to the builders.</h2>
+            <p class="t-md" style="color: #666; max-width: 720px;">No account managers. No delayed feedback loops. Every team member listed here is a hands-on practitioner who writes code, designs interfaces, and ships product.</p>
+        </div>
+
+        <!-- 3D Stacked Drag Carousel -->
+        <div class="team-stacked-wrapper reveal">
+            <div class="team-drag-stage" id="teamCarouselStage">
+                <!-- Transparent Drag Surface -->
+                <div class="team-drag-surface" id="teamDragSurface"></div>
+
+                <!-- Card 0: Manash -->
+                <div class="team-card-3d" data-index="0">
+                    <a href="https://manash.studiodraft.space/" target="_blank" rel="noopener noreferrer" class="team-card-img-link" aria-label="Manash Jyoti Baruah Portfolio">
+                        <img src="./assets/images/team_manash.jpg" alt="Manash Jyoti Baruah">
+                    </a>
+                    <div class="team-card-dark-overlay"></div>
+                    <div class="team-card-gradient"></div>
+                    <div class="team-badge-pill">ARCHITECT</div>
+                    <div class="team-info-box">
+                        <div class="team-name-3d">Manash Jyoti Baruah</div>
+                        <div class="team-role-3d">CO-FOUNDER & TECH ARCHITECT</div>
+                        <div class="team-desc-3d">Engineering high-throughput systems, cloud infrastructure, and core backends.</div>
+                    </div>
+
+                    <!-- Sliding Corner Boxes -->
+                    <a href="https://www.linkedin.com/in/manash-jyoti-baruah-931608394/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box1">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.88a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://manash.studiodraft.space/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box2">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.6 6h-3.32a14.7 14.7 0 0 0-1.38-4.2A8.04 8.04 0 0 1 18.6 8zM12 4.07c.83 1.15 1.5 2.52 1.94 3.93h-3.88c.44-1.41 1.11-2.78 1.94-3.93zM5.4 8h3.32c.38-1.5.94-2.92 1.68-4.2A8.04 8.04 0 0 0 5.4 8zm-1.35 6a7.96 7.96 0 0 1 0-4h3.68a16.6 16.6 0 0 0-.13 2c0 .68.05 1.35.13 2H4.05zm1.35 2h3.32a14.7 14.7 0 0 0 1.38 4.2A8.04 8.04 0 0 1 5.4 16zm6.6 3.93c-.83-1.15-1.5-2.52-1.94-3.93h3.88c-.44 1.41-1.11 2.78-1.94 3.93zm2.94-5.93h-5.88c-.09-.65-.14-1.32-.14-2s.05-1.35.14-2h5.88c.09.65.14 1.32.14 2s-.05 1.35-.14 2zm.96 4.2c.74-1.28 1.3-2.7 1.68-4.2h3.32a8.04 8.04 0 0 1-5 4.2zm1.7-6.2c.08-.65.13-1.32.13-2s-.05-1.35-.13-2h3.68a7.96 7.96 0 0 1 0 4h-3.68z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Manashjyoti18" target="_blank" rel="noopener noreferrer">
+                        <div class="box box3">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="mailto:manash.work.info@gmail.com">
+                        <div class="box box4">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 1: Abhigyan -->
+                <div class="team-card-3d" data-index="1">
+                    <a href="https://abhigyan.studiodraft.space/" target="_blank" rel="noopener noreferrer" class="team-card-img-link" aria-label="Abhigyan Saikia Portfolio">
+                        <img src="./assets/images/team_abhigyan.jpg" alt="Abhigyan Saikia">
+                    </a>
+                    <div class="team-card-dark-overlay"></div>
+                    <div class="team-card-gradient"></div>
+                    <div class="team-badge-pill">DESIGN LEAD</div>
+                    <div class="team-info-box">
+                        <div class="team-name-3d">Abhigyan Saikia</div>
+                        <div class="team-role-3d">CO-FOUNDER & DESIGN LEAD</div>
+                        <div class="team-desc-3d">Crafting conversion UI/UX, micro-interactions, and visual design systems.</div>
+                    </div>
+
+                    <!-- Sliding Corner Boxes -->
+                    <a href="https://www.linkedin.com/in/abhigyan-saikia-26641227b/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box1">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.88a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://abhigyan.studiodraft.space/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box2">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.6 6h-3.32a14.7 14.7 0 0 0-1.38-4.2A8.04 8.04 0 0 1 18.6 8zM12 4.07c.83 1.15 1.5 2.52 1.94 3.93h-3.88c.44-1.41 1.11-2.78 1.94-3.93zM5.4 8h3.32c.38-1.5.94-2.92 1.68-4.2A8.04 8.04 0 0 0 5.4 8zm-1.35 6a7.96 7.96 0 0 1 0-4h3.68a16.6 16.6 0 0 0-.13 2c0 .68.05 1.35.13 2H4.05zm1.35 2h3.32a14.7 14.7 0 0 0 1.38 4.2A8.04 8.04 0 0 1 5.4 16zm6.6 3.93c-.83-1.15-1.5-2.52-1.94-3.93h3.88c-.44 1.41-1.11 2.78-1.94 3.93zm2.94-5.93h-5.88c-.09-.65-.14-1.32-.14-2s.05-1.35.14-2h5.88c.09.65.14 1.32.14 2s-.05 1.35-.14 2zm.96 4.2c.74-1.28 1.3-2.7 1.68-4.2h3.32a8.04 8.04 0 0 1-5 4.2zm1.7-6.2c.08-.65.13-1.32.13-2s-.05-1.35-.13-2h3.68a7.96 7.96 0 0 1 0 4h-3.68z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/abhigyansaikiaa" target="_blank" rel="noopener noreferrer">
+                        <div class="box box3">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="mailto:work.abhigyansaikia@gmail.com">
+                        <div class="box box4">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 2: Gouri -->
+                <div class="team-card-3d" data-index="2">
+                    <a href="https://gouri.studiodraft.space/" target="_blank" rel="noopener noreferrer" class="team-card-img-link" aria-label="Gouri Gayan Portfolio">
+                        <img src="./assets/images/team_gouri.jpg" alt="Gouri Gayan">
+                    </a>
+                    <div class="team-card-dark-overlay"></div>
+                    <div class="team-card-gradient"></div>
+                    <div class="team-badge-pill">GROWTH LEAD</div>
+                    <div class="team-info-box">
+                        <div class="team-name-3d">Gouri Gayan</div>
+                        <div class="team-role-3d">PRODUCT & GROWTH STRATEGIST</div>
+                        <div class="team-desc-3d">Driving product strategy, market positioning, and growth acceleration.</div>
+                    </div>
+
+                    <!-- Sliding Corner Boxes -->
+                    <a href="https://www.linkedin.com/in/gouri-gayan-9b9aa5352/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box1">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.88a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://gouri.studiodraft.space/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box2">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.6 6h-3.32a14.7 14.7 0 0 0-1.38-4.2A8.04 8.04 0 0 1 18.6 8zM12 4.07c.83 1.15 1.5 2.52 1.94 3.93h-3.88c.44-1.41 1.11-2.78 1.94-3.93zM5.4 8h3.32c.38-1.5.94-2.92 1.68-4.2A8.04 8.04 0 0 0 5.4 8zm-1.35 6a7.96 7.96 0 0 1 0-4h3.68a16.6 16.6 0 0 0-.13 2c0 .68.05 1.35.13 2H4.05zm1.35 2h3.32a14.7 14.7 0 0 0 1.38 4.2A8.04 8.04 0 0 1 5.4 16zm6.6 3.93c-.83-1.15-1.5-2.52-1.94-3.93h3.88c-.44 1.41-1.11 2.78-1.94 3.93zm2.94-5.93h-5.88c-.09-.65-.14-1.32-.14-2s.05-1.35.14-2h5.88c.09.65.14 1.32.14 2s-.05 1.35-.14 2zm.96 4.2c.74-1.28 1.3-2.7 1.68-4.2h3.32a8.04 8.04 0 0 1-5 4.2zm1.7-6.2c.08-.65.13-1.32.13-2s-.05-1.35-.13-2h3.68a7.96 7.96 0 0 1 0 4h-3.68z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Panda1811/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box3">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="mailto:gouri.work.info@gmail.com">
+                        <div class="box box4">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 3: Somujjal -->
+                <div class="team-card-3d" data-index="3">
+                    <a href="https://somujjal.studiodraft.space/" target="_blank" rel="noopener noreferrer" class="team-card-img-link" aria-label="Somujjal Hazarika Portfolio">
+                        <img src="./assets/images/team_somujjal.jpg" alt="Somujjal Hazarika">
+                    </a>
+                    <div class="team-card-dark-overlay"></div>
+                    <div class="team-card-gradient"></div>
+                    <div class="team-badge-pill">UI DESIGNER</div>
+                    <div class="team-info-box">
+                        <div class="team-name-3d">Somujjal Hazarika</div>
+                        <div class="team-role-3d">UI / UX DESIGNER</div>
+                        <div class="team-desc-3d">Crafting bespoke user interfaces, digital experiences, and visual design systems.</div>
+                    </div>
+
+                    <!-- Sliding Corner Boxes -->
+                    <a href="https://www.linkedin.com/in/somujjal-hazarika/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box1">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.88a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://somujjal.studiodraft.space/" target="_blank" rel="noopener noreferrer">
+                        <div class="box box2">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.6 6h-3.32a14.7 14.7 0 0 0-1.38-4.2A8.04 8.04 0 0 1 18.6 8zM12 4.07c.83 1.15 1.5 2.52 1.94 3.93h-3.88c.44-1.41 1.11-2.78 1.94-3.93zM5.4 8h3.32c.38-1.5.94-2.92 1.68-4.2A8.04 8.04 0 0 0 5.4 8zm-1.35 6a7.96 7.96 0 0 1 0-4h3.68a16.6 16.6 0 0 0-.13 2c0 .68.05 1.35.13 2H4.05zm1.35 2h3.32a14.7 14.7 0 0 0 1.38 4.2A8.04 8.04 0 0 1 5.4 16zm6.6 3.93c-.83-1.15-1.5-2.52-1.94-3.93h3.88c-.44 1.41-1.11 2.78-1.94 3.93zm2.94-5.93h-5.88c-.09-.65-.14-1.32-.14-2s.05-1.35.14-2h5.88c.09.65.14 1.32.14 2s-.05 1.35-.14 2zm.96 4.2c.74-1.28 1.3-2.7 1.68-4.2h3.32a8.04 8.04 0 0 1-5 4.2zm1.7-6.2c.08-.65.13-1.32.13-2s-.05-1.35-.13-2h3.68a7.96 7.96 0 0 1 0 4h-3.68z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/somujjalhazarika" target="_blank" rel="noopener noreferrer">
+                        <div class="box box3">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span>
+                        </div>
+                    </a>
+                    <a href="mailto:work.somujjal@gmail.com">
+                        <div class="box box4">
+                            <span class="icon"><svg viewBox="0 0 24 24" class="svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Indicator Dots -->
+            <div class="team-nav-dots" id="teamNavDots">
+                <div class="team-dot active" data-target="0"></div>
+                <div class="team-dot" data-target="1"></div>
+                <div class="team-dot" data-target="2"></div>
+                <div class="team-dot" data-target="3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US — BESPOKE MINIMALIST STANDARDS ═══ -->
+<section id="why-us" class="section square-reveal" style="background: var(--black); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="reveal" style="margin-bottom: 54px;">
+            <p class="t-mono t-upper t-xs scramble-text" style="color: var(--red); margin-bottom: 16px;" data-scramble="Why Studio Draft?">Why Studio Draft?</p>
+            <div class="sep-red" style="margin-bottom: 24px;"></div>
+            <h2 class="t-display t-xl" style="color: var(--white); line-height: 1.1;">Hardworking standards.<br><span style="color: var(--red);">Zero compromise.</span></h2>
+        </div>
+
+        <div class="minimal-grid">
+            <!-- 01 -->
+            <div class="minimal-card reveal">
+                <div class="minimal-card-top">
+                    <span class="minimal-index">[ 01 ]</span>
+                    <span class="minimal-tag">Capacity</span>
+                </div>
+                <h3 class="minimal-title">We don't juggle 50 clients.</h3>
+                <p class="minimal-desc">When we partner with a product team, our core experts dive deep into your codebase, business metrics, and user behavior to build structural value — not surface-level deliverables.</p>
+                <div class="minimal-highlight">Full focus on 1 squad per sprint cycle.</div>
+            </div>
+
+            <!-- 02 -->
+            <div class="minimal-card reveal reveal-delay-1">
+                <div class="minimal-card-top">
+                    <span class="minimal-index">[ 02 ]</span>
+                    <span class="minimal-tag">Velocity</span>
+                </div>
+                <h3 class="minimal-title">Parallel design, code & marketing.</h3>
+                <p class="minimal-desc">We draft UI designs, write production code, and refine marketing funnels concurrently. This parallel iteration shrinks your launch timelines dramatically without quality tradeoffs.</p>
+                <div class="minimal-highlight">Ship 40% faster than sequential agency models.</div>
+            </div>
+
+            <!-- 03 -->
+            <div class="minimal-card reveal reveal-delay-2">
+                <div class="minimal-card-top">
+                    <span class="minimal-index">[ 03 ]</span>
+                    <span class="minimal-tag">Architecture</span>
+                </div>
+                <h3 class="minimal-title">Every product is a money platform.</h3>
+                <p class="minimal-desc">Every digital product we build is designed with clear revenue streams, streamlined checkout/billing flows, and sustainable unit economics at its core from day one.</p>
+                <div class="minimal-highlight">Revenue-first technical & visual design.</div>
+            </div>
+
+            <!-- 04 -->
+            <div class="minimal-card reveal reveal-delay-3">
+                <div class="minimal-card-top">
+                    <span class="minimal-index">[ 04 ]</span>
+                    <span class="minimal-tag">Access</span>
+                </div>
+                <h3 class="minimal-title">Direct founder & dev access.</h3>
+                <p class="minimal-desc">You get direct Slack and repo access to Manash, Abhigyan, Gouri, and Somujjal. Transparent sprint demos, clean documentation, and real accountability without middleman friction.</p>
+                <div class="minimal-highlight">Zero layers of project management overhead.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section contact-section square-reveal">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="reveal">
+            <p class="t-mono t-upper t-xs" style="color: var(--red); margin-bottom: 16px;">Initialize Project</p>
+        </div>
+        <h2 class="t-display t-xl reveal" style="margin-bottom: 16px;">Ready to draft your product blueprint?</h2>
+        <p class="t-md reveal" style="color: var(--white-muted); max-width: 700px; margin-bottom: 60px;">Tell us about your product goals, technical requirements, or redesign needs. Our lead team will review and respond within 24 hours.</p>
+
+        <div class="contact-grid">
+            <form id="contactForm" class="reveal" action="https://formsubmit.co/studiodraft.space@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Blueprint Request — Studio Draft">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-row-2">
+                    <div class="form-group"><label class="form-label">Your Name *</label><input type="text" name="name" class="form-input" placeholder="e.g. Alex Mercer" required></div>
+                    <div class="form-group"><label class="form-label">Email Address *</label><input type="email" name="email" class="form-input" placeholder="alex@company.com" required></div>
+                </div>
+                <div class="form-group"><label class="form-label">Primary Goal</label>
+                    <select id="primaryGoalSelect" name="goal" class="form-select">
+                        <option value="New Product MVP Blueprint (0 → 1)">New Product MVP Blueprint (0 → 1)</option>
+                        <option value="Product Redesign & UX Re-engineering">Product Redesign & UX Re-engineering</option>
+                        <option value="Team & Practitioner Squad Extension">Team & Practitioner Squad Extension</option>
+                        <option value="Branding, Web & Revenue Funnels">Branding, Web & Revenue Funnels</option>
+                    </select>
+                </div>
+                <div class="form-group"><label class="form-label">Project Overview *</label><textarea name="message" class="form-textarea" placeholder="Describe your product goals, core requirements, and timeline..." required></textarea></div>
+                <button type="submit" id="submitBtn" class="btn btn-red" style="width: 100%; justify-content: center; padding: 18px;">
+                    <span id="submitBtnText">Submit Blueprint Request</span>
+                    <span class="arrow"><svg class="arrow-svg" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </button>
+                <div class="form-success" id="formSuccess">✓ Blueprint Request Received. Our technical team will reach out within 24 hours.</div>
+            </form>
+
+            <div class="reveal reveal-delay-2" style="display: flex; align-items: center; justify-content: center;">
+                <div class="social-quad-wrapper" style="width: 100%;">
+                    <!-- From Uiverse.io by chase2k25 --> 
+                    <div class="social-quad-main">
+                        <div class="social-quad-up">
+                            <a href="https://www.instagram.com/studiodraft.space/" target="_blank" rel="noopener noreferrer" class="social-quad-card card1" aria-label="Instagram">
+                                <svg class="instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="40px" height="40px" fill-rule="nonzero">
+                                    <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <g transform="scale(8.53333,8.53333)">
+                                            <path d="M9.99805,3c-3.859,0 -6.99805,3.141 -6.99805,7.00195v9.99609c0,3.859 3.141,7 6.99805,7h9.99609c3.859,0 7,-3.141 7,-7v-9.99609c0,-3.859 -3.141,-7.00195 -7,-7.00195zM24,7h1c0.552,0 1,0.448 1,1v1c0,0.552 -0.448,1 -1,1h-1c-0.552,0 -1,-0.448 -1,-1v-1c0,-0.552 0.448,-1 1,-1zM15,9c3.309,0 6,2.691 6,6c0,3.309 -2.691,6 -6,6c-3.309,0 -6,-2.691 -6,-6c0,-3.309 2.691,-6 6,-6zM15,11c-2.20914,0 -4,1.79086 -4,4c0,2.20914 1.79086,4 4,4c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/manash-jyoti-baruah-931608394/" target="_blank" rel="noopener noreferrer" class="social-quad-card card2" aria-label="LinkedIn">
+                                <svg class="linkedin" height="38px" width="38px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.88a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-quad-down">
+                            <a href="mailto:studiodraft.space@gmail.com" class="social-quad-card card3" aria-label="Email">
+                                <svg class="email" height="38px" width="38px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/918822532722" target="_blank" rel="noopener noreferrer" class="social-quad-card card4" aria-label="WhatsApp">
+                                <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="whatsapp">
+                                    <path d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.255-1.377a9.916 9.916 0 0 0 4.737 1.206h.005c5.46 0 9.908-4.448 9.913-9.913A9.872 9.872 0 0 0 19 4.908h.001ZM11.992 20.15A8.216 8.216 0 0 1 7.797 19l-.3-.18-3.117.818.833-3.041-.196-.314a8.2 8.2 0 0 1-1.258-4.381c0-4.533 3.696-8.23 8.239-8.23a8.2 8.2 0 0 1 5.825 2.413 8.196 8.196 0 0 1 2.41 5.825c-.006 4.55-3.702 8.24-8.24 8.24Zm4.52-6.167c-.247-.124-1.463-.723-1.692-.808-.228-.08-.394-.123-.556.124-.166.246-.641.808-.784.969-.143.166-.29.185-.537.062-.247-.125-1.045-.385-1.99-1.23-.738-.657-1.232-1.47-1.38-1.716-.142-.247-.013-.38.11-.504.11-.11.247-.29.37-.432.126-.143.167-.248.248-.413.082-.167.043-.31-.018-.433-.063-.124-.557-1.345-.765-1.838-.2-.486-.404-.419-.557-.425-.142-.009-.309-.009-.475-.009a.911.911 0 0 0-.661.31c-.228.247-.864.845-.864 2.067 0 1.22.888 2.395 1.013 2.56.122.167 1.742 2.666 4.229 3.74.587.257 1.05.408 1.41.523.595.19 1.13.162 1.558.1.475-.072 1.464-.6 1.673-1.178.205-.58.205-1.075.142-1.18-.061-.104-.227-.165-.475-.29Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer-bottom">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="#top" class="logo" style="font-size: 1.2rem;">
+                <div class="logo-icon" style="width: 26px; height: 26px;">
+                    <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 4.5H15M3 9H15M3 13.5H10" stroke="#E63946" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="13.5" r="1.5" fill="#C9A84C"/></svg>
+                </div>
+                STUDIO<span class="accent">/DRAFT</span>
+            </a>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="plans.html">Plans & Pricing</a>
+                <a href="#cases">Blueprints</a>
+                <a href="#about">About</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-copy">Studio Draft © 2026. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT — ADVANCED ANIMATIONS & PHYSICS
+     ═══════════════════════════════════════════ -->
+<script>
+(function() {
+    'use strict';
+
+    // ── INITIAL PRELOADER SEQUENCE & OVERFLOW UNLOCK ──
+    const preloader = document.getElementById('preloader');
+
+    if (preloader) {
+        document.body.style.overflow = 'hidden';
+
+        // Wait 4 seconds for the CSS text animation sequence to complete
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+            document.body.style.overflow = '';
+            
+            // Reveal visible sections immediately
+            document.querySelectorAll('.square-reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 4000); 
+    }
+
+    // ── SQUARISH SECTION REVEAL INTERSECTION OBSERVER ──
+    const squareObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.square-reveal').forEach(el => {
+        squareObserver.observe(el);
+    });
+
+    // ── STICKY CARDS SCROLL STACKING & UNSTACKING EFFECT ──
+    const stickyCards = document.querySelectorAll('.sticky-card');
+    if (stickyCards.length > 0) {
+        window.addEventListener('scroll', () => {
+            stickyCards.forEach((card, index) => {
+                const nextCard = stickyCards[index + 1];
+                if (nextCard) {
+                    const nextRect = nextCard.getBoundingClientRect();
+                    const nextStickyTop = 120 + (index + 1) * 20;
+                    if (nextRect.top <= nextStickyTop + 40) {
+                        const overlap = (nextStickyTop + 40) - nextRect.top;
+                        const factor = Math.min(1, Math.max(0, overlap / 200));
+                        card.style.transform = `scale(${1 - factor * 0.04}) translateY(-${factor * 10}px)`;
+                        card.style.opacity = `${1 - factor * 0.4}`;
+                        card.style.filter = `blur(${factor * 2}px)`;
+                    } else {
+                        card.style.transform = 'scale(1) translateY(0px)';
+                        card.style.opacity = '1';
+                        card.style.filter = 'blur(0px)';
+                    }
+                }
+            });
+        }, { passive: true });
+    }
+
+    // ── SCROLL PROGRESS BAR ──
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+        const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const currentScroll = window.scrollY;
+        if (progressBar && totalScroll > 0) {
+            progressBar.style.width = (currentScroll / totalScroll * 100) + '%';
+        }
+    }, { passive: true });
+
+    // ── ADVANCED CUSTOM CURSOR WITH LERP PHYSICS ──
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursorDot');
+    let mouseX = -100, mouseY = -100;
+    let cursorX = -100, cursorY = -100;
+    let dotX = -100, dotY = -100;
+
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function renderCursor() {
+        // Lerp physics for smooth spring motion
+        cursorX += (mouseX - cursorX) * 0.18;
+        cursorY += (mouseY - cursorY) * 0.18;
+        dotX += (mouseX - dotX) * 0.45;
+        dotY += (mouseY - dotY) * 0.45;
+
+        if (cursor) cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+        if (cursorDot) cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+        requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Dynamic Hover Binding for Cursor
+    document.querySelectorAll('a, button, .btn, .tag, .badge, .uiverse-card, .direct-access-card, .case-card, .service-card, .testimonial-card, .services-nav-link').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if (!cursor) return;
+            if (el.classList.contains('btn') || el.classList.contains('btn-red')) {
+                cursor.classList.add('hover');
+                cursor.textContent = '';
+            } else if (el.classList.contains('case-card') || el.getAttribute('data-cursor') === 'VIEW') {
+                cursor.classList.add('hover-card');
+                cursor.textContent = 'EXPLORE';
+            } else if (el.classList.contains('team-card-img-link')) {
+                cursor.classList.add('hover-card');
+                cursor.textContent = 'PORTFOLIO';
+            } else if (el.classList.contains('uiverse-card') || el.classList.contains('direct-access-card')) {
+                cursor.classList.add('hover-card');
+                cursor.textContent = 'BUILDER';
+            } else {
+                cursor.classList.add('hover-link');
+                cursor.textContent = '';
+            }
+        });
+        el.addEventListener('mouseleave', () => {
+            if (!cursor) return;
+            cursor.className = 'cursor';
+            cursor.textContent = '';
+        });
+    });
+
+    // ── MAGNETIC BUTTON HOVER EFFECT ──
+    document.querySelectorAll('.btn, .logo-icon, .services-nav-link').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate3d(${x * 0.22}px, ${y * 0.22}px, 0) scale(1.02)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate3d(0, 0, 0) scale(1)`;
+        });
+    });
+
+    // ── BUTTON RIPPLE CLICK EFFECT ──
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            this.style.setProperty('--ripple-x', x + 'px');
+            this.style.setProperty('--ripple-y', y + 'px');
+            this.classList.remove('ripple');
+            void this.offsetWidth; // Force reflow
+            this.classList.add('ripple');
+        });
+    });
+
+    // ── SCROLL REVEAL ──
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .stagger-children, .line-draw').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // ── WORD-BY-WORD REVEAL ──
+    document.querySelectorAll('.word-reveal').forEach(container => {
+        const text = container.textContent.trim();
+        container.innerHTML = '';
+        text.split(/\s+/).forEach((word, i) => {
+            const span = document.createElement('span');
+            span.className = 'word';
+            const inner = document.createElement('span');
+            inner.textContent = word;
+            inner.style.transitionDelay = (i * 0.05) + 's';
+            span.appendChild(inner);
+            container.appendChild(span);
+            container.appendChild(document.createTextNode(' '));
+        });
+        revealObserver.observe(container);
+    });
+
+    // ── SCRAMBLE TEXT ──
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!?';
+    document.querySelectorAll('[data-scramble]').forEach(el => {
+        const original = el.getAttribute('data-scramble');
+        let scrambled = false;
+
+        const scrambleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !scrambled) {
+                    scrambled = true;
+                    let iteration = 0;
+                    const interval = setInterval(() => {
+                        el.textContent = original.split('').map((char, i) => {
+                            if (i < iteration) return original[i];
+                            if (char === ' ') return ' ';
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        }).join('');
+                        if (iteration >= original.length) clearInterval(interval);
+                        iteration += 1;
+                    }, 25);
+                }
+            });
+        }, { threshold: 0.5 });
+        scrambleObserver.observe(el);
+    });
+
+    // ── COUNTER ANIMATION ──
+    document.querySelectorAll('.counter').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'));
+        if (isNaN(target)) return;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counterObserver.unobserve(entry.target);
+                    let current = 0;
+                    const step = Math.max(1, Math.floor(target / 40));
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) { current = target; clearInterval(timer); }
+                        el.textContent = current + (target === 100 ? '%' : '');
+                    }, 30);
+                }
+            });
+        }, { threshold: 0.5 });
+        counterObserver.observe(el);
+    });
+
+    // ── HEADER SCROLL DIRECTION & COMPACT STATE ──
+    const header = document.getElementById('header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (!header) return;
+
+        header.classList.toggle('scrolled', currentScrollY > 60);
+
+        if (currentScrollY > 200) {
+            if (currentScrollY > lastScrollY && !header.classList.contains('nav-hidden')) {
+                header.classList.remove('nav-visible');
+                header.classList.add('nav-hidden');
+            } else if (currentScrollY < lastScrollY && header.classList.contains('nav-hidden')) {
+                header.classList.remove('nav-hidden');
+                header.classList.add('nav-visible');
+            }
+        } else {
+            header.classList.remove('nav-hidden');
+            header.classList.add('nav-visible');
+        }
+        lastScrollY = currentScrollY;
+    }, { passive: true });
+
+    // ── HAMBURGER / MOBILE MENU ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // ── SMOOTH SCROLL ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href !== '#') {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // ── SERVICES TABS SWITCHER ──
+    window.switchServiceTab = function(tabName) {
+        document.querySelectorAll('.services-nav-link').forEach(b => {
+            if (b.getAttribute('data-tab') === tabName) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
+            }
+        });
+        document.querySelectorAll('.services-panel').forEach(p => {
+            if (p.getAttribute('data-panel') === tabName) {
+                p.classList.add('active');
+            } else {
+                p.classList.remove('active');
+            }
+        });
+        const select = document.getElementById('primaryGoalSelect');
+        if (select) {
+            select.value = tabName;
+        }
+    };
+
+    document.querySelectorAll('.services-nav-link').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tab = this.getAttribute('data-tab');
+            window.switchServiceTab(tab);
+        });
+    });
+
+    // ── CARD GLOW & SPOTLIGHT RADIAL MOUSE TRACKING ──
+    document.querySelectorAll('.card-glow, .service-card, .benefit-card, .testimonial-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+        });
+    });
+
+    // ── 3D TILT EFFECT ON CARDS ──
+    document.querySelectorAll('.testimonial-card, .case-card, .team-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const rotateX = (-y / rect.height * 12).toFixed(2);
+            const rotateY = (x / rect.width * 12).toFixed(2);
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+    });
+
+    // ── AUTOMATED EMAIL FORM SUBMIT & EMAIL CLIENT REDIRECT ──
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const success = document.getElementById('formSuccess');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const formData = new FormData(form);
+            const name = formData.get('name') || '';
+            const email = formData.get('email') || '';
+            const goal = formData.get('goal') || '';
+            const message = formData.get('message') || '';
+
+            const mailtoUrl = `mailto:studiodraft.space@gmail.com?subject=${encodeURIComponent('New Blueprint Request — ' + name)}&body=${encodeURIComponent(
+                'STUDIO DRAFT — BLUEPRINT REQUEST\n' +
+                '-----------------------------------\n' +
+                'Client Name: ' + name + '\n' +
+                'Client Email: ' + email + '\n' +
+                'Primary Goal: ' + goal + '\n\n' +
+                'PROJECT OVERVIEW:\n' + message
+            )}`;
+
+            if (location.protocol === 'file:') {
+                e.preventDefault();
+                window.location.href = mailtoUrl;
+                if (success) {
+                    success.textContent = '✓ Opening email composer for studiodraft.space@gmail.com...';
+                    success.classList.add('show');
+                }
+                form.reset();
+                setTimeout(() => { if (success) success.classList.remove('show'); }, 6000);
+            } else {
+                if (submitBtn) {
+                    submitBtn.style.opacity = '0.7';
+                    if (submitBtnText) submitBtnText.textContent = 'Sending Blueprint Email...';
+                }
+            }
+        });
+    }
+
+    // ── 3D STACKED DRAG CAROUSEL (carousel-07) ──
+    function setupTeamCarousel() {
+        const dragSurface = document.getElementById('teamDragSurface');
+        const cards = Array.from(document.querySelectorAll('.team-card-3d'));
+        const dots = Array.from(document.querySelectorAll('.team-dot'));
+        if (!dragSurface || cards.length === 0) return;
+
+        const total = cards.length;
+        let currentProgress = 0;
+        let targetProgress = 0;
+        let startProgress = 0;
+        let startX = 0;
+        let isDragging = false;
+        let lastX = 0;
+        let lastTime = 0;
+        let velocityX = 0;
+
+        function getConfig() {
+            const width = window.innerWidth;
+            if (width < 640) {
+                return { distanceDivisor: 120, velocityDivisor: 500, sensitivity: 180, xMultiplier: 90, yMultiplier: 20, rotationMultiplier: 8, scaleReduction: 0.06 };
+            }
+            if (width < 1024) {
+                return { distanceDivisor: 160, velocityDivisor: 650, sensitivity: 220, xMultiplier: 130, yMultiplier: 30, rotationMultiplier: 10, scaleReduction: 0.09 };
+            }
+            return { distanceDivisor: 200, velocityDivisor: 800, sensitivity: 250, xMultiplier: 170, yMultiplier: 40, rotationMultiplier: 12, scaleReduction: 0.12 };
+        }
+
+        function updateCards() {
+            const config = getConfig();
+            currentProgress += (targetProgress - currentProgress) * 0.14;
+
+            const activeIdx = (Math.round(currentProgress) % total + total) % total;
+            dots.forEach((dot, idx) => {
+                if (idx === activeIdx) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+
+            cards.forEach((card, i) => {
+                let diff = (i - currentProgress) % total;
+                if (diff > total / 2) diff -= total;
+                if (diff < -total / 2) diff += total;
+
+                const absDiff = Math.abs(diff);
+                const x = diff * config.xMultiplier;
+                const rotate = absDiff < 0.05 ? 0 : diff * config.rotationMultiplier;
+                const y = absDiff < 0.05 ? 0 : absDiff * config.yMultiplier;
+                const scale = 1 - absDiff * config.scaleReduction;
+                const zIndex = Math.round(100 - absDiff * 10);
+                const opacity = Math.max(0, 1 - absDiff * 0.45);
+
+                card.style.transform = `translate3d(${x}px, ${y}px, 0px) rotate(${rotate}deg) scale(${scale})`;
+                card.style.zIndex = zIndex;
+                card.style.opacity = opacity;
+
+                const darkOverlay = card.querySelector('.team-card-dark-overlay');
+                if (darkOverlay) {
+                    darkOverlay.style.opacity = Math.min(0.6, absDiff * 0.25);
+                }
+            });
+
+            requestAnimationFrame(updateCards);
+        }
+
+        function getClientX(e) {
+            return e.touches ? e.touches[0].clientX : e.clientX;
+        }
+
+        function onPointerDown(e) {
+            isDragging = true;
+            startX = getClientX(e);
+            lastX = startX;
+            lastTime = performance.now();
+            startProgress = targetProgress;
+            velocityX = 0;
+            dragSurface.style.cursor = 'grabbing';
+        }
+
+        function onPointerMove(e) {
+            if (!isDragging) return;
+            const clientX = getClientX(e);
+            const now = performance.now();
+            const deltaX = clientX - startX;
+            const dt = now - lastTime;
+            
+            if (dt > 0) {
+                velocityX = ((clientX - lastX) / dt) * 1000;
+            }
+            lastX = clientX;
+            lastTime = now;
+
+            const config = getConfig();
+            targetProgress = startProgress - (deltaX / config.sensitivity);
+        }
+
+        function onPointerUp(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            dragSurface.style.cursor = 'grab';
+
+            const config = getConfig();
+            const dragDistance = (lastX - startX);
+            const distanceShift = -dragDistance / config.distanceDivisor;
+            const velocityShift = -velocityX / config.velocityDivisor;
+
+            let totalShift = Math.round(distanceShift + velocityShift);
+            totalShift = Math.max(-3, Math.min(3, totalShift));
+
+            targetProgress = Math.round(startProgress) + totalShift;
+        }
+
+        dragSurface.addEventListener('mousedown', onPointerDown);
+        window.addEventListener('mousemove', onPointerMove);
+        window.addEventListener('mouseup', onPointerUp);
+
+        dragSurface.addEventListener('touchstart', onPointerDown, { passive: true });
+        window.addEventListener('touchmove', onPointerMove, { passive: true });
+        window.addEventListener('touchend', onPointerUp);
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const targetIdx = parseInt(dot.getAttribute('data-target'), 10);
+                let currentRounded = Math.round(targetProgress);
+                let currentBase = ((currentRounded % total) + total) % total;
+                let diff = targetIdx - currentBase;
+                if (diff > total / 2) diff -= total;
+                if (diff < -total / 2) diff += total;
+                targetProgress = currentRounded + diff;
+            });
+        });
+
+        requestAnimationFrame(updateCards);
+    }
+
+    setupTeamCarousel();
+
+})();
+</script>
+
+</body>
+</html>
