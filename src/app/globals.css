@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-navy-dark: #071633;
+  --color-navy: #0A1F44;
+  --color-cream: #FAF5EB;
+  --color-coral: #FF6B4A;
+  --color-line: rgba(250, 245, 235, 0.12);
+
+  --u: 1px;
+  --n: 1px;
+  --hfs: 64px;
+  --ic: 40px;
+  --pfs: 36px;
+  --sfs: 44px;
+  --mfs: 48px;
+  --camw: 320px;
+  --cw: 218px;
+  --ch: 288px;
+}
+
+html {
+  scroll-behavior: auto !important;
+  color: #FAF5EB;
+  background-color: #071633;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: #071633;
+  color: #FAF5EB;
+  font-family: var(--font-archivo), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Nav header styling */
+header {
+  color: #FAF5EB !important;
+}
+
+header .nav-logo-text {
+  color: #FAF5EB !important;
+}
+
+header nav a,
+header nav button {
+  color: #FAF5EB !important;
+}
+
+header nav a:hover,
+header nav button:hover {
+  color: #FF6B4A !important;
+}
+
+header .nav-cta-btn {
+  background-color: #FF6B4A !important;
+  color: #FAF5EB !important;
+}
+
+/* Lenis smooth scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid #FF6B4A !important;
+  outline-offset: 3px !important;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #FF6B4A;
+  color: #FFFFFF;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* All sections are opacity 1 by default, no scroll fade */
+section, main {
+  opacity: 1 !important;
+}

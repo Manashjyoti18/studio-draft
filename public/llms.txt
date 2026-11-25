@@ -1,0 +1,40 @@
+# Studio Draft
+
+Website: https://studiodraft.space
+Location: Assam, India
+Email: work@abhigyansaikia.in
+Phone: +91 88225 32722
+WhatsApp: +91 60015 80182
+Instagram: https://www.instagram.com/studiodraft.space/
+Portfolio: https://abhigyansaikia.in
+
+## What We Do
+Design. Develop. Deploy. We design, develop and market digital products built to make money.
+
+## Services
+Our standard offer is a bundle:
+- High-Performance Website
+- Local Booking Chatbot: Answers customer questions directly from the business website data alone, with zero external AI and zero API costs.
+- Order or Enquiry Form: Direct routing to WhatsApp and email.
+- Found on Google: Structured technical schema and search indexing.
+
+Architectural add-ons:
+- Full Automation: Automated customer workflows and notifications.
+- Payment Gateway: Stripe and Razorpay integrations.
+- Customer Desk: Ticketing and support workflows.
+
+## Team
+A team of 4 people based in Assam, India:
+- Manash Jyoti Baruah: Co-Founder and Tech Architect
+- Abhigyan Saikia: Co-Founder and Design Lead
+- Gouri Gayan: Product and Growth Strategist
+- Somujjal Hazarika: UI UX Designer
+
+## Works
+- ToolKB.in: Free client-side image compression tool (Live).
+- Brandcey: Curated design services platform (IN PROGRESS).
+- Arogya Relief: Emergency medical relief directory (Live).
+- The Retro Cafe: Retro cafe in Mon, Nagaland (Client).
+- Nel Cakes: Bakery ordering system in Ottawa (PREVIEW, IN PROGRESS).
+- Cafe and Bakery Demo: Operational demo for cafes and bakeries.
+- Beauty and Salon Demo: Operational demo for salon businesses.
